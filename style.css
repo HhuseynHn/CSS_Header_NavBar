@@ -18,6 +18,7 @@ header {
 ul {
   display: flex;
   list-style: none;
+  margin-right: 20px;
 }
 ul li {
   margin-left: 10px;
@@ -31,16 +32,28 @@ h2 {
 .listParent {
   position: relative;
 }
-.listParent:hover .list{
-    display: block;
-}
 .list {
-  display:none;
+  opacity: 0;
+  transition-timing-function: ease;
+  transition: margin-top 2s;
   background-color: #fff;
   color: black;
   position: absolute;
-  right: 0px;
-  
-  padding: 0px;
-  
+  right: -25px;
+  padding: 4px 15px 15px 10px;
+  width: 110px;
+  border-radius: 5px;
+  border-color: teal;
+  background-color: rgb(142, 218, 218);
 }
+.listParent:hover .list {
+  opacity: 1;
+  display: block;
+  margin-top: 40px;
+}
+.list li {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-bottom: 1.5px solid black;
+  font-size: 12px;
+  }
