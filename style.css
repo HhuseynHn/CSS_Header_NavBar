@@ -14,14 +14,24 @@ header {
   position: fixed;
   width: 100%;
 }
-
-ul {
+.menu {
   display: flex;
-  list-style: none;
+  position: relative;
+}
+.mainHeader {
   margin-right: 20px;
+  display: flex;
 }
 ul li {
+  list-style: none;
   margin-left: 10px;
+}
+li::after {
+  content: "|";
+  padding-left: 15px;
+}
+li:last-child::after {
+  content: "";
 }
 h2 {
   background-color: red;
@@ -30,16 +40,16 @@ h2 {
   margin-left: 5px;
 }
 .listParent {
-  position: relative;
 }
 .list {
+  position: absolute;
   opacity: 0;
-  transition-timing-function: ease;
-  transition: margin-top 2s;
+  /* transition-timing-function: ease;
+    transition: margin-top 0s;  */
   background-color: #fff;
   color: black;
-  position: absolute;
-  right: -25px;
+  z-index: 0;
+  right: 150px;
   padding: 4px 15px 15px 10px;
   width: 110px;
   border-radius: 5px;
@@ -47,8 +57,7 @@ h2 {
   background-color: rgb(142, 218, 218);
 }
 .listParent:hover .list {
-  opacity: 1;
-  display: block;
+    opacity: 1;
   margin-top: 40px;
 }
 .list li {
@@ -56,4 +65,7 @@ h2 {
   padding-bottom: 7px;
   border-bottom: 1.5px solid black;
   font-size: 12px;
-  }
+}
+.list li::after {
+  content: "";
+}
